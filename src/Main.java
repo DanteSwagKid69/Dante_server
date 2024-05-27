@@ -30,8 +30,51 @@ public class Main {
             DatagramPacket data = new DatagramPacket(buf, buf.length);
             serverMulticastSocket.receive(data);
             String msg = new String(data.getData()).trim();
+
+            // Get the operator sign, for example + or -
+            callMethodDependingOnOperatorSign(msg);
+
             System.out.println("Message received from client = " + msg);
         }
         serverMulticastSocket.close();
     }
+
+    static void callMethodDependingOnOperatorSign(String msg) {
+        String[] args = new String[2];
+        if (msg.contains("+")) {
+            args = msg.split("\\+");
+            System.out.println(args[0] + " | " + args[1]);
+
+        }
+    }
+
+    static String addition(int arg1, int arg2) {
+        String result = "";
+
+
+        return result;
+    }
+
+    static String subtraction(int arg1, int arg2) {
+        String result = "";
+
+
+        return result;
+    }
+
+    static String division(int arg1, int arg2) {
+        String result = "";
+
+
+        return result;
+    }
+
+    static String multiplication(int arg1, int arg2) {
+        String result = "";
+
+
+        return result;
+    }
+
+
 }
